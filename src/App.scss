@@ -1,0 +1,75 @@
+.stopwatch {
+	@apply min-h-screen flex max-md:flex-col items-center justify-center bg-gradient-to-r from-[#380036] to-[#085f5f] text-white;
+
+	&__container {
+		@apply flex flex-col items-center gap-6 p-8 rounded-lg shadow-lg bg-gray-800 bg-opacity-80 md:mr-12;
+	}
+
+	// styles for total time & lap time elements
+	&__time {
+		@apply flex flex-col items-center;
+	}
+
+	&__label {
+		@apply text-lg font-semibold;
+	}
+
+	&__display {
+		@apply text-5xl font-bold mt-2 bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent;
+	}
+
+	// styles for buttons
+	&__btns {
+		@apply flex gap-2 mt-4;
+	}
+
+	&__btn {
+		@apply text-white font-bold py-2 px-4 rounded transition duration-300 transform shadow-xl;
+
+		&:disabled {
+			@apply opacity-30 pointer-events-none;
+		}
+
+		&--start {
+			@apply bg-gradient-to-r from-green-500 to-green-700 hover:from-green-600 hover:to-green-800;
+		}
+		&--stop {
+			@apply bg-gradient-to-r from-red-500 to-red-700 hover:from-red-600 hover:to-red-800;
+		}
+		&--reset {
+			@apply bg-gradient-to-r from-orange-500 to-orange-700 hover:from-orange-600 hover:to-orange-800;
+		}
+		&--lap {
+			@apply bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800;
+		}
+		&--back {
+			@apply bg-gradient-to-r from-green-500 to-blue-700 hover:from-blue-700 hover:to-blue-800;
+		}
+	}
+
+	// styles for table
+	&__lap-table {
+		@apply mt-6 w-full max-w-xs text-center border-collapse border border-gray-600 rounded-lg overflow-hidden;
+
+		&-head {
+			@apply bg-gray-700 text-white;
+		}
+
+		&-row {
+			@apply bg-gray-800 text-white;
+		}
+
+		&-header {
+			@apply py-2 px-4 border-gray-700;
+		}
+	}
+
+	// styles for summary
+	&__summary {
+		@apply flex flex-col gap-4 mt-8;
+
+		&-item {
+			@apply text-lg font-semibold bg-gray-700 py-2 px-4 rounded-md shadow;
+		}
+	}
+}
